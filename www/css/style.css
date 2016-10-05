@@ -1,1 +1,8 @@
 /* Empty. Add your own CSS if you like */
+.item-complex.item-icon-right .item-content{
+	padding-left: 20px;
+	padding-right: 30px;
+}
+.item-icon-right .icon-accessory{
+	right: 10px;
+}

@@ -1,28 +1,43 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
-
-.controller('ChatsCtrl', function($scope, Chats) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  };
+.controller('BoluoCtrl', function($scope, $http, $stateParams) {
+    var env = "dev";
+    var type_id = $stateParams.id;
+    console.log(type_id);
+    var node_host = "http://localhost:3000"
+    if (env == 'production') {
+        node_host = "http://192.168.1.113:3001";
+    }
+    $http.get(node_host + "/news/" + type_id).success(function(data) {
+        console.log(data);
+        $scope.Models = data.data;
+    });
 })
+
+.controller('HuizhouCtrl', function($scope,$http,$stateParams) {
+    var env = "dev";
+    var type_id = $stateParams.id;
+    console.log(type_id);
+    var node_host = "http://localhost:3000"
+    if (env == 'production') {
+        node_host = "http://192.168.1.113:3001";
+    }
+    $http.get(node_host + "/news/" + type_id).success(function(data) {
+        console.log(data);
+        $scope.Models = data.data;
+    });
+})
+
+.controller('NewDetailCtrl', ['$scope', function($scope) {
+
+}])
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
+    $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
+.controller('AboutCtrl', function($scope) {
+    $scope.settings = {
+        enableFriends: true
+    };
 });
