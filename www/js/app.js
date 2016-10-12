@@ -75,8 +75,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
             }
         })
 
-     .state('tab.news-detail', {
-            url: '/news/:newsid',
+     .state('tab.detail-boluo', {
+            url: '/detail-boluo/:id',
             views: {
                 'tab-boluo': {
                     templateUrl: 'templates/news-detail.html',
@@ -84,12 +84,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
                 }
             }
         })
-        .state('tab.chat-detail', {
-            url: '/chats/:chatId',
+ .state('tab.detail-huizou', {
+            url: '/detail-huizou/:id',
             views: {
-                'tab-chats': {
-                    templateUrl: 'templates/chat-detail.html',
-                    controller: 'ChatDetailCtrl'
+                'tab-huizhou': {
+                    templateUrl: 'templates/news-detail.html',
+                    controller: 'NewDetailCtrl'
                 }
             }
         })

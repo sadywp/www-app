@@ -29,7 +29,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('NewDetailCtrl', ['$scope', function($scope) {
-
+    console.log('hello world');
 }])
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
