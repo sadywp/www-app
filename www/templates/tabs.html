@@ -3,22 +3,17 @@ Create tabs with an icon and label, using the tabs-positive style.
 Each tab's child <ion-nav-view> directive will have its own
 navigation history that also transitions its views in and out.
 -->
-<ion-tabs class="tabs-icon-top tabs-color-active-positive">
-
-  <!-- Dashboard Tab -->
-  <ion-tab title="博罗" icon-off="ion-leaf" icon-on="ion-leaf" href="#/tab/boluo/1">
-    <ion-nav-view name="tab-boluo"></ion-nav-view>
-  </ion-tab>
-
-  <!-- Chats Tab -->
-  <ion-tab title="惠州" icon-off="ion-waterdrop" icon-on="ion-waterdrop" href="#/tab/huizhou/2">
-    <ion-nav-view name="tab-huizhou"></ion-nav-view>
-  </ion-tab>
-
-  <!-- Account Tab -->
-  <ion-tab title="资讯" icon-off="ion-fireball" icon-on="ion-fireball" href="#/tab/about">
-    <ion-nav-view name="tab-about"></ion-nav-view>
-  </ion-tab>
-
-
+<ion-tabs class="tabs-icon-top tabs-color-active-positive" hide-back-button="true">
+    <!-- Dashboard Tab -->
+    <ion-tab title="博罗" icon-off="ion-leaf" icon-on="ion-leaf" href="#/tab/boluo">
+        <ion-nav-view name="tab-boluo"></ion-nav-view>
+    </ion-tab>
+    <!-- Chats Tab -->
+    <ion-tab title="惠州" icon-off="ion-waterdrop" icon-on="ion-waterdrop" href="#/tab/huizhou">
+        <ion-nav-view name="tab-huizhou"></ion-nav-view>
+    </ion-tab>
+    <!-- Account Tab -->
+    <ion-tab title="资讯" icon-off="ion-fireball" icon-on="ion-fireball" href="#/tab/about">
+        <ion-nav-view name="tab-about"></ion-nav-view>
+    </ion-tab>
 </ion-tabs>

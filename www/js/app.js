@@ -23,7 +23,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     });
 })
 
-.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
 
     $ionicConfigProvider.platform.ios.tabs.style('standard');
@@ -56,40 +56,46 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     // Each tab has its own nav history stack:
 
     .state('tab.boluo', {
-        url: '/boluo/:id',
+        url: '/boluo',
         views: {
             'tab-boluo': {
-                templateUrl: 'templates/tab-boluo.html',
-                controller: 'BoluoCtrl'
+                templateUrl: 'templates/tab-news-list.html',
+                controller: 'NewsListCtrl'
             }
+        },
+        data: {
+            type_id: 1
         }
     })
 
     .state('tab.huizhou', {
-            url: '/huizhou/:id',
-            views: {
-                'tab-huizhou': {
-                    templateUrl: 'templates/tab-huizhou.html',
-                    controller: 'HuizhouCtrl'
-                }
+        url: '/huizhou',
+        views: {
+            'tab-huizhou': {
+                templateUrl: 'templates/tab-news-list.html',
+                controller: 'NewsListCtrl'
             }
-        })
+        },
+        data: {
+            type_id: 2
+        }
+    })
 
-     .state('tab.detail-boluo', {
+    .state('tab.detail-boluo', {
             url: '/detail-boluo/:id',
             views: {
                 'tab-boluo': {
-                    templateUrl: 'templates/news-detail.html',
-                    controller: 'NewDetailCtrl'
+                    templateUrl: 'templates/tab-boluo-detail.html',
+                    controller: 'NewBoluoDetailCtrl'
                 }
             }
         })
- .state('tab.detail-huizou', {
+        .state('tab.detail-huizou', {
             url: '/detail-huizou/:id',
             views: {
                 'tab-huizhou': {
-                    templateUrl: 'templates/news-detail.html',
-                    controller: 'NewDetailCtrl'
+                    templateUrl: 'templates/tab-huizhou-detail.html',
+                    controller: 'NewHuizouDetailCtrl'
                 }
             }
         })
@@ -105,6 +111,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     });
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/tab/boluo/1');
+    $urlRouterProvider.otherwise('/tab/boluo');
 
 });

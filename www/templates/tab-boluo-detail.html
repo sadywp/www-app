@@ -1,0 +1,64 @@
+<style type="text/css">
+.viewbox {
+    padding-bottom: 8px;
+    font-size: 14px;
+    font-family: Microsoft Yahei;
+    color: #333;
+    max-width: 550px;
+}
+
+.viewbox .title {
+    line-height: 56px;
+    text-align: center;
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+.viewbox .title h2 {
+    font-size: 24px;
+    color: #2b2b2b;
+}
+
+.viewbox .info {
+    line-height: 17px;
+    text-align: center;
+    overflow: hidden;
+    color: #666;
+}
+
+.viewbox .info small {
+    margin-left: 8px;
+    margin-right: 3px;
+    color: #999;
+    font-size: 12px;
+}
+
+.viewbox .info a {
+    color: #690;
+}
+
+.viewbox .intro {
+    width: 90%;
+    padding: 8px 16px;
+    line-height: 24px;
+    border: 1px solid #DCDDDD;
+    font-size: 14px;
+    color: #706A6A;
+    margin: 8px auto 0 auto;
+    background-color: #EFF9FC;
+}
+
+.viewbox .content {
+    font-size: 14px;
+    line-height: 25px;
+    color: #333;
+    max-width: 550px;
+}
+</style>
+
+<ion-view view-title="新闻详情">
+    <ion-content class="padding">
+        <p ng-bind-html="content"></p>
+        <div id="hidcontent" ng-show="false" ng-bind-html="hidcontent"></div>   
+    </ion-content>
+</ion-view>

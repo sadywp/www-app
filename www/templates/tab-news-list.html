@@ -1,7 +1,7 @@
-<ion-view view-title="博罗新闻" align-title="center">
+<ion-view view-title="{{title}}" align-title="center" hide-back-button="true">
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="model in Models" type="item-text-wrap" href="#/tab/detail-boluo/111">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="model in Models" type="item-text-wrap" ng-href="#/tab/{{typePath}}/{{model.newsid}}">
         <h2>{{model.title}}</h2>
         <p>{{model.date}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
@@ -11,5 +11,6 @@
         </ion-option-button>
       </ion-item>
     </ion-list>
+     <!-- <ion-nav-view name="tab-details"></ion-nav-view> -->
   </ion-content>
 </ion-view>
